@@ -5,25 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./../src/fonts.css">
+    <link rel="stylesheet" href="./../src/assets/ico/style.css">
 </head>
 <body>
-    <header class="header-login">
-        <nav>
-            <h1>Title app</h1>
-            <ul>
-                <a href="../index.html">Home</a>
-                <a href="register.html">Register</a>
-            </ul>
-        </nav>
-    </header>
     <main class="main-login">
-        <form action="#">
-            <label for="nickname">User Name:</label><br>
-            <input type="text" name="nickname" id="nickname"><br>
-            <label for="pass">Password: </label><br>
-            <input type="text" name="pass" id="pass"><br>
-            <button id="btn-login">Login</button>
-        </form>
+        <div class="cont-form">
+            <p>title app</p>
+            <form action="#">
+                <h1>Log in</h1>
+                <label for="nickname">User Name:</label>
+                <input type="text" name="nickname" id="nickname">
+                <label for="pass">Password: </label>
+                <div class="cont-pass">
+                    <input type="password" name="pass" id="pass">
+                    <a title="hide password" href="#"><span class="icon-eye"></span></a>
+                </div>
+                
+                
+                <button id="btn-login">Login</button>
+            </form>
+        </div>
     </main>
 </body>
 </html>
