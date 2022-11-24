@@ -12,10 +12,12 @@ window.addEventListener("load", () => {
     }
     addAttr(name, value, hrefA, linkA) {
       this.elementAttr.setAttribute(name, value);
-      this.elementAttr.setAttribute(hrefA, linkA);
     }
     addAttrAncle(hrefA, linkA) {
       this.elementAttr.setAttribute(hrefA, linkA);
+    }
+    addImg() {
+      this.elementAttr.setAttribute("src", "./assets/img-perfil/1.png");
     }
   }
 
@@ -37,6 +39,9 @@ window.addEventListener("load", () => {
     if (create.element.nodeName == "A") {
       create.addAttrAncle("href", linkValue);
     }
+    if (create.element.nodeName == "IMG") {
+      create.addImg();
+    }
   }
 
   function section() {
@@ -45,6 +50,22 @@ window.addEventListener("load", () => {
 
   function aside() {
     createElement("aside", "", "root", "id", "aside-app");
+    createElement("div", "", "aside-app", "id", "cont-inf-admin");
+
+    createElement("div", "", "cont-inf-admin", "id", "inf-admin");
+
+    createElement("div", "", "inf-admin", "id", "cont-inf-img");
+    createElement("img", "", "cont-inf-img", "id", "img-perfil");
+
+    createElement("div", "", "inf-admin", "id", "cont-inf-email");
+    createElement(
+      "a",
+      "myEmailPerExample@gmail.com",
+      "cont-inf-email",
+      "id",
+      "email-admin"
+    );
+
     createElement("ul", "", "aside-app", "id", "ul-aside-app");
 
     createElement("li", "", "ul-aside-app", "id", "li1-aside-app");
@@ -141,6 +162,7 @@ window.addEventListener("load", () => {
 
   function styleSection() {
     let section = document.getElementById("sectio-app");
+    section.style.background = '#ffffff';
     section.style.width = "100%";
   }
 
@@ -167,25 +189,46 @@ window.addEventListener("load", () => {
     let liUlAside3 = document.getElementById("li3-aside-app");
     let liUlAside4 = document.getElementById("li4-aside-app");
     let liUlAside5 = document.getElementById("li5-aside-app");
+    let infAdmin = document.getElementById("inf-admin");
+    let contImgPerfil = document.getElementById("cont-inf-img");
+    let imgPerfil = document.getElementById("img-perfil");
+    let contInfEmail = document.getElementById("cont-inf-email");
+    let emailAdmin = document.getElementById("email-admin");
+    let contInfAdmin = document.getElementById("cont-inf-admin");
 
-    liUlAside1.style.display = 'block';
-    liUlAside1.style.width = '100%';
-    liUlAside1.style.textAlign = 'center';
-    liUlAside2.style.display = 'block';
-    liUlAside2.style.width = '100%';
-    liUlAside2.style.textAlign = 'center';
-    liUlAside3.style.display = 'block';
-    liUlAside3.style.width = '100%';
-    liUlAside3.style.textAlign = 'center';
-    liUlAside4.style.display = 'block';
-    liUlAside4.style.width = '100%';
-    liUlAside4.style.textAlign = 'center';
-    liUlAside5.style.display = 'block';
-    liUlAside5.style.width = '100%';
-    liUlAside5.style.textAlign = 'center';
+    contInfAdmin.style.borderBottom = "1px solid rgba(73, 92, 107, 0.6)";
+
+    infAdmin.style.display = "grid";
+    infAdmin.style.padding = "5px";
+    infAdmin.style.gridTemplateColumns = "1fr 5fr";
+    imgPerfil.style.width = "100%";
+    imgPerfil.style.display = "block";
+    imgPerfil.style.borderRadius = '4px';
+    contInfEmail.style.overflowX = "hidden";
+    contInfEmail.style.display = "block";
+    contInfEmail.style.paddingTop = "6px";
+    contInfEmail.style.paddingLeft = "6px";
+    emailAdmin.style.color = "#ddd";
+    emailAdmin.style.textDecoration = "none";
+
+    liUlAside1.style.display = "block";
+    liUlAside1.style.width = "100%";
+    liUlAside1.style.textAlign = "center";
+    liUlAside2.style.display = "block";
+    liUlAside2.style.width = "100%";
+    liUlAside2.style.textAlign = "center";
+    liUlAside3.style.display = "block";
+    liUlAside3.style.width = "100%";
+    liUlAside3.style.textAlign = "center";
+    liUlAside4.style.display = "block";
+    liUlAside4.style.width = "100%";
+    liUlAside4.style.textAlign = "center";
+    liUlAside5.style.display = "block";
+    liUlAside5.style.width = "100%";
+    liUlAside5.style.textAlign = "center";
 
     ulAside.style.listStyle = "none";
-    ulAside.style.padding = '0px';
+    ulAside.style.padding = "0px";
 
     iconAside1.style.color = "#ddd";
     iconAside1.style.padding = "2%";
@@ -275,8 +318,8 @@ window.addEventListener("load", () => {
     });
     aside.style.backgroundColor = "#1f1e37";
     aside.style.padding = "5px";
-    aside.style.transitionProperty = 'tranform';
-    aside.style.transitionDuration = '1s';
+    aside.style.transitionProperty = "tranform";
+    aside.style.transitionDuration = "1s";
   }
 
   function styleRoot() {
@@ -287,6 +330,7 @@ window.addEventListener("load", () => {
   }
 
   function styleHeaderApp() {
+    let contrast = true;
     let headerApp = document.getElementById("header-app");
     let contNav = document.getElementById("cont-nav");
     let btn1Header = document.getElementById("ancle-nav btn1");
@@ -298,7 +342,7 @@ window.addEventListener("load", () => {
     document.getElementById("sep-ancle").style.width = "100%";
     document.getElementById("sep-ancle").style.padding = "10px";
 
-    headerApp.style.background = "#FFF";
+    headerApp.style.background = "#fff";
     headerApp.style.display = "block";
     headerApp.style.borderBottom = "solid 1px #eee";
     headerApp.style.paddingLeft = "20px";
@@ -335,6 +379,27 @@ window.addEventListener("load", () => {
     btn4Header.style.padding = "5px";
     btn4Header.style.width = "100%";
     btn4Header.style.color = "#000";
+
+    btn2Header.addEventListener("click", () => {
+      if (contrast) {
+        headerApp.style.background = "#041829";
+        document.getElementById("section-app").style.background = "#041829";
+        btn1Header.style.color = "#fff";
+        btn2Header.style.color = "#fff";
+        btn3Header.style.color = "#fff";
+        btn4Header.style.color = "#fff";
+        
+        contrast = false;
+      } else {
+        headerApp.style.background = "#ffffff";
+        document.getElementById("section-app").style.background = '#ffffff';
+        btn1Header.style.color = "#000";
+        btn2Header.style.color = "#000";
+        btn3Header.style.color = "#000";
+        btn4Header.style.color = "#000";
+        contrast = true;
+      }
+    });
   }
 
   styleHeaderApp();
@@ -362,64 +427,70 @@ window.addEventListener("load", () => {
     let divGridAside5 = document.getElementById("cont-grid-li5-aside");
     let aside = document.getElementById("aside-app");
     let ulAside = document.getElementById("ul-aside-app");
+    let contInfEmail = document.getElementById("cont-inf-email");
+    let infAdmin = document.getElementById("inf-admin");
 
     if (root.style.gridTemplateColumns === "1.5fr 10fr") {
       root.style.gridTemplateColumns = "0.2fr 13fr";
       document.getElementsByClassName("icon-indent-decrease")[0].className =
         "icon-indent-increase";
+
+      infAdmin.style.display = "block";
+      contInfEmail.style.display = "none";
+
       btn1Aside.style.display = "none";
       btn2Aside.style.display = "none";
       btn3Aside.style.display = "none";
       btn4Aside.style.display = "none";
       btn5Aside.style.display = "none";
       iconAside1.style.fontSize = "20px";
-      iconAside1.style.cursor = 'pointer';
-      iconAside1.style.color = '#ddd';
-      iconAside1.addEventListener('mouseover', ()=>{
-        iconAside1.style.color = '#fff';
+      iconAside1.style.cursor = "pointer";
+      iconAside1.style.color = "#ddd";
+      iconAside1.addEventListener("mouseover", () => {
+        iconAside1.style.color = "#fff";
       });
-      iconAside1.addEventListener('mouseout', ()=>{
-        iconAside1.style.color = '#fff';
+      iconAside1.addEventListener("mouseout", () => {
+        iconAside1.style.color = "#fff";
       });
       iconAside1.style.width = "100%";
       iconAside2.style.fontSize = "20px";
-      iconAside2.style.cursor = 'pointer';
-      iconAside2.style.color = '#ddd';
-      iconAside2.addEventListener('mouseover', ()=>{
-        iconAside2.style.color = '#fff';
+      iconAside2.style.cursor = "pointer";
+      iconAside2.style.color = "#ddd";
+      iconAside2.addEventListener("mouseover", () => {
+        iconAside2.style.color = "#fff";
       });
-      iconAside2.addEventListener('mouseout', ()=>{
-        iconAside2.style.color = '#fff';
+      iconAside2.addEventListener("mouseout", () => {
+        iconAside2.style.color = "#fff";
       });
       iconAside2.style.width = "100%";
       iconAside3.style.fontSize = "20px";
-      iconAside3.style.cursor = 'pointer';
-      iconAside3.style.color = '#ddd';
-      iconAside3.addEventListener('mouseover', ()=>{
-        iconAside3.style.color = '#fff';
+      iconAside3.style.cursor = "pointer";
+      iconAside3.style.color = "#ddd";
+      iconAside3.addEventListener("mouseover", () => {
+        iconAside3.style.color = "#fff";
       });
-      iconAside3.addEventListener('mouseout', ()=>{
-        iconAside3.style.color = '#fff';
+      iconAside3.addEventListener("mouseout", () => {
+        iconAside3.style.color = "#fff";
       });
       iconAside3.style.width = "100%";
       iconAside4.style.fontSize = "20px";
-      iconAside4.style.cursor = 'pointer';
-      iconAside4.style.color = '#ddd';
-      iconAside4.addEventListener('mouseover', ()=>{
-        iconAside4.style.color = '#fff';
+      iconAside4.style.cursor = "pointer";
+      iconAside4.style.color = "#ddd";
+      iconAside4.addEventListener("mouseover", () => {
+        iconAside4.style.color = "#fff";
       });
-      iconAside4.addEventListener('mouseout', ()=>{
-        iconAside4.style.color = '#fff';
+      iconAside4.addEventListener("mouseout", () => {
+        iconAside4.style.color = "#fff";
       });
       iconAside4.style.width = "100%";
       iconAside5.style.fontSize = "20px";
-      iconAside5.style.cursor = 'pointer';
-      iconAside5.style.color = '#ddd';
-      iconAside5.addEventListener('mouseover', ()=>{
-        iconAside5.style.color = '#fff';
+      iconAside5.style.cursor = "pointer";
+      iconAside5.style.color = "#ddd";
+      iconAside5.addEventListener("mouseover", () => {
+        iconAside5.style.color = "#fff";
       });
-      iconAside5.addEventListener('mouseout', ()=>{
-        iconAside5.style.color = '#fff';
+      iconAside5.addEventListener("mouseout", () => {
+        iconAside5.style.color = "#fff";
       });
       iconAside5.style.width = "100%";
       divGridAside1.style.padding = "10px";
@@ -443,13 +514,15 @@ window.addEventListener("load", () => {
       divGridAside5.style.marginBottom = "10px";
       divGridAside5.style.display = "block";
       aside.style.display = "block";
-      aside.style.transitionDelay = '0.5s';
+      aside.style.transitionDelay = "0.5s";
       ulAside.style.display = "block";
       ulAside.style.textAlign = "center";
     } else if (root.style.gridTemplateColumns === "0.2fr 13fr") {
       root.style.gridTemplateColumns = "1.5fr 10fr";
       document.getElementsByClassName("icon-indent-increase")[0].className =
         "icon-indent-decrease";
+      infAdmin.style.display = "grid";
+      contInfEmail.style.display = "block";
       btn1Aside.style.display = "block";
       btn2Aside.style.display = "block";
       btn3Aside.style.display = "block";
