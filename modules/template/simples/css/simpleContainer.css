@@ -1,0 +1,19 @@
+*{
+    margin: 0px;
+    padding: 0pc;
+}
+body{
+    background-color: aliceblue;
+}
+
+#container{
+    display: block;
+    position: relative;
+    padding: 5px;
+}
+
+#cont-grid-main-aside{
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+}
+

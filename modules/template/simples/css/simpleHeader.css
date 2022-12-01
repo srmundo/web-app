@@ -1,0 +1,12 @@
+#header{
+    display: block;
+    margin: auto;
+    width: 100%;
+    min-height: 5vh;
+    border: 1px solid #aaa;
+    background-color: antiquewhite;
+}
+
+#cont-h1-header{
+    padding: 5px;
+}

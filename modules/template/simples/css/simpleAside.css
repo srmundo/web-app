@@ -1,0 +1,16 @@
+#cont-aside{
+    
+    width: 100%;
+    display: block;
+}
+
+#aside{
+    border: 1px solid #aaa;
+    position: relative;
+    width: 94%;
+    min-height: 83vh;
+    display: block;
+    margin:10px auto;
+    background-color: antiquewhite;
+    overflow-y: scroll;
+}

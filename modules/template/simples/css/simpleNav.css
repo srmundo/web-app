@@ -1,0 +1,7 @@
+#nav-bar{
+    display: block;
+    margin: 5px auto 0px auto;
+    width: 100%;
+    border: 1px solid #aaa;
+    background-color: antiquewhite;
+}
